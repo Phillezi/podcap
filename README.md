@@ -9,7 +9,7 @@ Each capture is started in the background and the process id for the capture is 
 
 ## Features
 
-- Capture network traffic from multiple pods simultaneously.
+- Capture network traffic from all containers in multiple pods simultaneously.
 - Store captured packets in `.pcap` format for analysis with [`Wireshark`](https://www.wireshark.org/) or `tcpdump`.
 - Specify a custom output directory for the capture files.
 - Stop individual or all running captures with a simple command.
@@ -80,7 +80,7 @@ By default, capture files are saved to `/tmp`.
 
 ## Capture-file naming
 
-The capture file will be stored in the `--output` directory or `/tmp` by default and will be named `<podname>_capture.pcap`.
+The capture file will be stored in the `--output` directory or `/tmp` by default and will be named `<pod-name>_<container-name>_capture.pcap`.
 If a capture file already exists, the script automatically appends `_i` where `i` increments until a unique filename is found.
 
 ## Notes
